@@ -15,10 +15,10 @@ const NavBarDaisy = () => {
 
 
     return (
-        <nav className='bg-gray-500 text-black px-6 py-2 md:py-0 md:min-h-[56px]'>
+        <nav className='bg-gray-500 text-white px-6 py-2 md:py-0 md:min-h-[56px] font-medium'>
             <div className='md:hidden text-2xl inline-block bg-gray-400 p-1 md:p-0 rounded-lg' onClick={() => setOpen(!open)}>
                 {
-                    open === true ? <AiOutlineClose></AiOutlineClose> : <AiOutlineMenu></AiOutlineMenu>
+                    open === true ? <AiOutlineMenu></AiOutlineMenu> : <AiOutlineClose></AiOutlineClose>
                 }
             </div>
             <ul className={`md:flex duration-100 absolute md:static
