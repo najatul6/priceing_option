@@ -1,6 +1,9 @@
-import React from 'react';
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import Link from '../Link/Link';
+import { useState } from 'react';
 
 const NavBarDaisy = () => {
+    const [open, setOpen] = useState(false)
 
     const routes = [
         { id: 1, name: 'Home', path: '/' },
@@ -12,12 +15,17 @@ const NavBarDaisy = () => {
 
 
     return (
-        <nav>
-            <ul>
+        <nav className='bg-gray-500 text-black px-6 py-2 md:py-0 md:min-h-[56px]'>
+            <div className='md:hidden text-2xl inline-block bg-gray-400 p-1 md:p-0 rounded-lg' onClick={() => setOpen(!open)}>
                 {
-                    routes.map(route => <li key={route.id}>
-                        <a href={route.path}>{route.name}</a>
-                    </li>)
+                    open === true ? <AiOutlineClose></AiOutlineClose> : <AiOutlineMenu></AiOutlineMenu>
+                }
+            </div>
+            <ul className={`md:flex duration-100 absolute md:static
+            ${open? '-top-[50%]':'top-8 left-12'}
+            bg-gray-400 md:bg-gray-500 py-2 px-5 rounded-lg md:rounded-none`}>
+                {
+                    routes.map(route => <Link key={route.id} route={route}></Link>)
                 }
             </ul>
         </nav>

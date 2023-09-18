@@ -1,11 +1,12 @@
 import NavBarDaisy from "./Components/NavBarDaisy/NavBarDaisy"
+import PriceOptions from "./Components/PriceOptions/PriceOptions"
 
 function App() {
 
   return (
     <>
       <NavBarDaisy></NavBarDaisy>
-      <h1>Vite + React</h1>
+      <PriceOptions></PriceOptions>
     </>
   )
 }
